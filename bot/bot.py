@@ -46,8 +46,6 @@ def create_reply_keyboard(role):
         return keyboard
 
 # начало
-
-
 @bot.message_handler(commands=['start'])
 def start(message):
     """Идентифицируем роль пользователя"""
@@ -114,9 +112,8 @@ def ask_question(message):
         bot.send_message(message.chat.id, "Пожалуйста, введите ваш вопрос.")
     else:
         bot.send_message(message.chat.id, "Вы не можете задать вопрос.")
+        
 # Проверяем, если пользователь в состоянии ввода вопроса
-
-
 @bot.message_handler(func=is_asking_question)
 def save_question(message):
     """
@@ -156,7 +153,7 @@ def view_questions(message):
         tg_id=f"@{message.from_user.username}").first()
 
     if speaker:
-        # Fetch all questions assigned to the speaker
+
         questions = Question.objects.filter(
             speaker=speaker).order_by('-created_at')
         if questions.exists():
