@@ -5,7 +5,6 @@ from django.utils.timezone import now
 from pytz import timezone
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bot_backend.settings')
-django.setup()
 
 
 def get_schedule():
