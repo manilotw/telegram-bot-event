@@ -45,7 +45,8 @@ source env/bin/activate
 
 ## шаг 3
 Создаем базу данных 
-Все легко, просто ввведите:
+
+Все легко, просто введите:
 1.
 ```
  . python manage.py makemigrations 
