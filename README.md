@@ -40,7 +40,7 @@ source env/bin/activate
 ```
 Для владельцев окна:
  ```
- . eenv\scripts\activate
+ . env\scripts\activate
 ```
 
 ## шаг 3
