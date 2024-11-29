@@ -47,6 +47,7 @@ source env/bin/activate
 Создаем базу данных 
 
 Все легко, просто введите:
+
 1.
 ```
  . python manage.py makemigrations 
@@ -79,7 +80,7 @@ cd path/bot_backend
 И как Вы уже могли догадаться, на данном этапе, инфу Вам бот не даст - ее просто-напросто нет.
 Поэтому
 
-1,
+1.
 ```
 python manage.py createsuperuser
 ```
@@ -87,13 +88,3 @@ python manage.py createsuperuser
 
 3. Снова запускаем бот и чудо должно случиться, если все пошло по плану
 
-Explain what these tests test and why
-
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
