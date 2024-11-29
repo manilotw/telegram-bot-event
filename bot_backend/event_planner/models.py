@@ -49,20 +49,15 @@ class SpeakerSession(models.Model):
 
 
 class User(models.Model):
-    ROLE_CHOICES = [
-        ('speaker', 'Speaker'),
-        ('listener', 'Listener'),  # сразу заносим и юзера и дколадчика 
-    ]
-
     tg_id = models.CharField(max_length=60, unique=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, null=True, blank=True)
     username = models.CharField(max_length=100, null=True, blank=True)
     role = models.CharField(
-        max_length=10, choices=ROLE_CHOICES, default='listener')
+        max_length=10, default='listener')
 
     def __str__(self):
-        return f"{self.first_name} ({self.get_role_display()})"
+        return f"{self.first_name} ({self.role})"
 
 
 class Question(models.Model):
