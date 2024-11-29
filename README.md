@@ -5,6 +5,8 @@
 ## шаг 1
 
 Клонирируем, самого ботa в директорию
+
+
 [ссылка на бота](https://github.com/manilotw/telegram-bot-event.git)
 
 ```
