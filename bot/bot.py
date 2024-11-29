@@ -20,6 +20,9 @@ try:
 
 except Exception as e:
     print(f"Error importing models: {e}")
+
+
+# Здесь можно поменять api и вставить свою
 bot = TeleBot("8066339717:AAFqYwMs5zx8va4mYBMgV8i9xFwXVK_4RKI")
 
 # словарь, чтобы чекать, если пользователь в состоянии ввода вопроса
