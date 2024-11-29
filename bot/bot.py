@@ -54,6 +54,7 @@ def start(message):
     """Идентифицируем роль пользователя"""
     tg_id = str(message.chat.id)
     username = message.from_user.username
+
     try:
         user, created = User.objects.get_or_create(
             tg_id=tg_id,
@@ -63,13 +64,11 @@ def start(message):
                 'username': username
             }
         )
-
         if username and Speaker.objects.filter(tg_id=f"@{username}").exists():
             user.role = 'speaker'
         else:
-            user.role = 'listener'
+            user.role = 'listener
         user.save()
-
         keyboard = create_reply_keyboard(user.role)
         role = 'Докладчик' if user.role == 'speaker' else 'Слушатель'
         bot.send_message(
@@ -80,6 +79,7 @@ def start(message):
 
     except Exception as e:
         bot.send_message(message.chat.id, f"Ошибка при идентификации: {e}")
+
 
 
 def is_about_command(message):
