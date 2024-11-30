@@ -67,7 +67,7 @@ def start(message):
         if username and Speaker.objects.filter(tg_id=f"@{username}").exists():
             user.role = 'speaker'
         else:
-            user.role = 'listener
+            user.role = 'listener'
         user.save()
         keyboard = create_reply_keyboard(user.role)
         role = 'Докладчик' if user.role == 'speaker' else 'Слушатель'
