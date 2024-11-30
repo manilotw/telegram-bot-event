@@ -22,25 +22,23 @@ def get_schedule():
 
     schedule = (
         f'Мероприятие: {event} '
-        f'{event.start_event.strftime(
-            '%H:%M')} - {event.end_event.strftime('%H:%M')}\n'
+        f"{event.start_event.strftime('%H:%M')} - {event.end_event.strftime('%H:%M')}\n"
     )
     sessions = event.sessions.all().order_by('start_session')
 
     for session in sessions:
         schedule += (
             f'  {session} '
-            f'{session.start_session.strftime(
-                '%H:%M')} - {session.end_session.strftime('%H:%M')}\n'
+            f'{session.start_session.strftime("%H:%M")} - {session.end_session.strftime("%H:%M")}\n'
         )
+
         speaker_sessions = session.speaker_sessions.all().order_by('start_session')
         for speaker_session in speaker_sessions:
             schedule += (
-                f'    Доклад: {speaker_session} от {
-                    speaker_session.speaker.name} '
-                f'{speaker_session.start_session.strftime(
-                    '%H:%M')} - {speaker_session.end_session.strftime('%H:%M')}\n'
+                f'    Доклад: {speaker_session} от {speaker_session.speaker.name} '
+                f'{speaker_session.start_session.strftime("%H:%M")} - {speaker_session.end_session.strftime("%H:%M")}\n'
             )
+
 
     return schedule.strip()
 
